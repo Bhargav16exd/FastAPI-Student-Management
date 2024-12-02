@@ -25,7 +25,6 @@ class StudentCreate(BaseModel):
     address: AddressBase
 
 class StudentResponse(BaseModel):
-    id: str
     name: str
     age: int
     address: AddressBase
@@ -104,7 +103,7 @@ async def get_student(id: str):
         raise HTTPException(status_code=404, detail="Student not found")
     
     
-    student["id"] = str(student["_id"])
+    student.pop("_id", None)
 
 
     return student

@@ -1,6 +1,5 @@
 fastapi
 pymongo
 python-dotenv
-unicorn
 uvicorn
 
